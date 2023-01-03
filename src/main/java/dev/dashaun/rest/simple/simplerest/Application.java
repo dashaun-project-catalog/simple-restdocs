@@ -3,7 +3,6 @@ package dev.dashaun.rest.simple.simplerest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Properties;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,40 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @SpringBootApplication
-public class DemoApplication {
+public class Application {
 
 	public static void main(String[] args) {
-//		SpringApplication.run(DemoApplication.class, args);
-		SpringApplication app = new SpringApplication(DemoApplication.class);
-
-		Properties properties = new Properties();
-		properties.setProperty("spring.resources.static-locations",
-				"classpath:/static/docs/");
-		app.setDefaultProperties(properties);
-		app.run(args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
 
 
-class Greeting {
-
-	private final long id;
-	private final String content;
-
-	public Greeting(long id, String content) {
-		this.id = id;
-		this.content = content;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public String getContent() {
-		return content;
-	}
-}
+record Greeting(long id, String content) {}
 
 @RestController
 class GreetingController {
