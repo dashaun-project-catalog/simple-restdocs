@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.4</version>
+    <version>3.2.5</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun.rest.simple</groupId>
@@ -13,7 +13,6 @@
   <version>0</version>
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
-    <project.build.directory>null</project.build.directory>
     <java.version>21</java.version>
     <spring-restdocs.version>3.0.0</spring-restdocs.version>
     <project.build.outputDirectory>null</project.build.outputDirectory>
@@ -107,7 +106,10 @@
         </executions>
         <configuration>
           <image>
-            <builder>dashaun/builder:tiny</builder>
+            <buildpacks>
+              <buildpack>paketobuildpacks/java-native-image</buildpack>
+            </buildpacks>
+            <builder>paketobuildpacks/builder-jammy-buildpackless-tiny</builder>
             <createdDate>now</createdDate>
             <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
           </image>
