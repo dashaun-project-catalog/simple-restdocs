@@ -5,16 +5,16 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.3.1</version>
+    <version>3.5.0</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun.rest.simple</groupId>
-  <artifactId>simple-rest</artifactId>
+  <artifactId>simple-restdocs</artifactId>
   <version>0</version>
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
-    <java.version>21</java.version>
-    <spring-restdocs.version>3.0.0</spring-restdocs.version>
+    <java.version>17</java.version>
+    <spring-restdocs.version>3.0.3</spring-restdocs.version>
     <project.build.outputDirectory>null</project.build.outputDirectory>
   </properties>
   <dependencies>
@@ -106,11 +106,7 @@
         </executions>
         <configuration>
           <image>
-            <buildpacks>
-              <buildpack>paketobuildpacks/java-native-image</buildpack>
-            </buildpacks>
-            <builder>paketobuildpacks/builder-jammy-buildpackless-tiny</builder>
-            <createdDate>now</createdDate>
+            <builder>paketobuildpacks/builder-noble-java-tiny</builder>
             <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
           </image>
         </configuration>
