@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.1</version>
+    <version>4.0.7.1</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun.rest.simple</groupId>
@@ -14,17 +14,19 @@
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
     <java.version>17</java.version>
-    <spring-restdocs.version>4.0.0</spring-restdocs.version>
+    <spring-restdocs.version>4.0.1</spring-restdocs.version>
     <project.build.outputDirectory>null</project.build.outputDirectory>
   </properties>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-jackson2</artifactId>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -35,16 +37,19 @@
           <artifactId>spring-boot-starter-jackson</artifactId>
         </exclusion>
       </exclusions>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
+      <version>6.0.3</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -56,11 +61,13 @@
           <artifactId>spring-boot-starter-jackson</artifactId>
         </exclusion>
       </exclusions>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.restdocs</groupId>
       <artifactId>spring-restdocs-mockmvc</artifactId>
       <scope>test</scope>
+      <version>4.0.1</version>
     </dependency>
   </dependencies>
   <build>
